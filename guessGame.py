@@ -2,10 +2,12 @@ import random
 
 def gameMenu():
     scores=[]
-    
-    with open('highScores.txt', 'r') as highScores:
-        for line in highScores:
-            scores.append(line.strip().split('\t'))
+    try:
+        with open('highScores.txt', 'r') as highScores:
+            for line in highScores:
+                scores.append(line.strip().split('\t'))
+    except FileNotFoundError:
+        pass            
     
 
     while True:
